@@ -1,11 +1,18 @@
 package otherproj2;
-import java.util.ArrayList;
 
 public class Array {
     
-    public static int total = 0;
-    static ArrayList<Integer> vid = new ArrayList<>();
-    static ArrayList<String> vpro = new ArrayList<>();
-    static ArrayList<Double> vprice = new ArrayList<>();
+    int vid;
+    String vpro;
+    double vprice;
     
+    public void processProduct(int idol, String pro, double nice){
+        this.vid = idol;
+        this.vpro = pro;
+        this.vprice = nice;
+    }
+    
+    public void displayProduct(){
+           System.out.printf("%-5d %-10s %-10.1f\n",this.vid, this.vpro, this.vprice);
+    }
 }
