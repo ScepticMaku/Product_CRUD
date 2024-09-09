@@ -1,18 +1,13 @@
 package otherproj2;
 
 public class viewProducts {
-    
-    int vid;
-    String vpro;
-    double vprice;
-    
-    public void processProduct(int idol, String pro, double nice){
-        this.vid = idol;
-        this.vpro = pro;
-        this.vprice = nice;
-    }
-    
     public void displayProduct(){
-           System.out.printf("%-5d %-10s %-10.1f\n",vid,vpro,vprice);
+            System.out.print("Display Products: \n");
+            
+            System.out.printf("\n%-5s %-10s %-10s\n","ID","Product","Price");
+            
+            for(int i = 0; i < Array.total; i++){
+                System.out.printf("%-5d %-10s %-10.1f\n",Array.vid.get(i),Array.vpro.get(i),Array.vprice.get(i));
+            }
     }
 }
