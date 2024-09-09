@@ -11,7 +11,7 @@ public class Input {
     double price;
     
     public void addProducts(){
-        
+        System.out.println("\nAdd Products: ");
         System.out.print("Enter number of products to add: ");
         int num = sc.nextInt();
         
@@ -27,27 +27,56 @@ public class Input {
             pd[i] = new Declare();
             pd[i].processProduct(id, product, price);
         }
-        
         max += num;
     }
     
     public void viewProducts(){
-        System.out.println("Product List: ");
+        System.out.println("\nProduct List: ");
         System.out.println("---------------------------------------------------------");
         System.out.printf("%-5s %-10s %-10s\n","ID","Product", "Price");
         
-        for(int i = 0; i < max; i++){
+        try{
+            for(int i = 0; i < max; i++){
             pd[i].productRow();
+            }
+        }catch(NullPointerException e){
+            System.out.println("");
         }
         
         System.out.println("---------------------------------------------------------");
     }
     
     public void editProducts(){
-        System.out.println("Edit Product: \n");
+        System.out.println("\nEdit Product:");
         System.out.print("Enter product ID to edit: ");
         id = sc.nextInt();
         
-        System.out.println("Selected product: "+pd[id].p_name);
+        for(int i = 0; i < max; i++){
+            if(id == pd[i].p_id){
+                System.out.println("Selected product: "+pd[i].p_name);
+                System.out.print("Enter new price: ");
+                price = sc.nextDouble();
+                
+                pd[i].p_price = price;
+                
+                System.out.println("Price changed successfully!\n");
+            }
+        }
+    }
+    
+    public void removeProducts(){
+        System.out.println("\nRemove Product:");
+        System.out.print("Enter product ID: ");
+        id = sc.nextInt();
+        
+        for(int i = 0; i < max; i++){
+            System.out.println("Selected product: "+pd[i].p_name);
+            System.out.print("Confirm delete? [y/n]: ");
+            String confirm = sc.next();
+            
+            if(confirm.equals("y")){
+                pd[i] = null;
+            }
+        }
     }
 }
