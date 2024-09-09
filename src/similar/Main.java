@@ -24,9 +24,7 @@ public class Main {
                 case 2 -> in.viewProducts();
                 case 3 -> in.editProducts();
                 case 4 -> in.removeProducts();
-                default -> {
-                    System.out.println("Invalid choice.");
-                }
+                default -> System.out.println("Invalid choice.");
             }
             System.out.print("Make another transaction? (y/n): ");
             transaction = sc.next();

@@ -1,5 +1,5 @@
 package otherproj2;
-import java.util.*;
+import java.util.Scanner;
 
 public class removeProducts {
     public void removeProduct(){

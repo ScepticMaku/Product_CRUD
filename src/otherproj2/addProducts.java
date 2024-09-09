@@ -1,9 +1,9 @@
 package otherproj2;
-import java.util.*;
+import java.util.Scanner;
 
 public class addProducts {
     public Array ar;
-    int pnum;
+    static int pnum;
     
     public void addProduct(){
         Scanner sc = new Scanner(System.in);

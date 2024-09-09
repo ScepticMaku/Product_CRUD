@@ -1,6 +1,7 @@
 package similar;
 
 public class Declare {
+    
     int p_id;
     String p_name;
     double p_price;
